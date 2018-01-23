@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title Cloud Admin - Application d'administration du cloud
+		block head
+		link(rel='stylesheet', href='/stylesheets/angular-material.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		header
+		section#content(ui-view='content')
+		footer
+		script(src='/js/jquery.min.js')
+		script(src='/js/angular.min.js')
+		script(src='/js/angular-aria.min.js')
+		script(src='/js/angular-material.min.js')
+		script(src='/js/angular-animate.min.js')
+		script(src='/js/angular-messages.min.js')
+		script(src='/js/angular-ui-router.min.js')
+		script(src='/js/angular-storage.min.js')
+		script(src='/js/angular-deferred-bootstrap.min.js')
+		script(src='/js/'+client)
+		script(type='text/javascript').
+			window.deferredBootstrapper.bootstrap({
+				element: window.document.body,
+				module: 'cloud.admin.client',
+				resolve: {
+					API: ['$http', function($http) {
+						return $http.get('#{apiListUrl}');
+					}]
+				}
+			});

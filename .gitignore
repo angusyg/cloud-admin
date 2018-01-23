@@ -1,0 +1,6 @@
+node_modules
+client/public/js/**
+client/public/stylesheets/**
+logs
+npm-debug.log
+package-lock.json

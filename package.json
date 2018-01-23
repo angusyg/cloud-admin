@@ -1,0 +1,49 @@
+{
+    "name": "CloudAdmin",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "concurrently \"gulp watch\" \"supervisor --watch . ./server/server.js\"",
+        "start": "supervisor --watch . ./server/server.js",
+        "prod": "set NODE_ENV=production&& supervisor ./server/server.js"
+    },
+    "dependencies": {
+        "@uirouter/angularjs": "^1.0.13",
+        "angular": "^1.6.8",
+        "angular-animate": "^1.6.8",
+        "angular-aria": "^1.6.8",
+        "angular-deferred-bootstrap": "^0.1.9",
+        "angular-material": "^1.1.5",
+        "angular-messages": "^1.6.8",
+        "angular-storage": "0.0.15",
+        "bcrypt": "^1.0.3",
+        "body-parser": "^1.18.2",
+        "cookie-parser": "^1.4.3",
+        "cors": "^2.8.4",
+        "debug": "^3.1.0",
+        "express": "^4.16.2",
+        "helmet": "^3.9.0",
+        "jquery": "^3.2.1",
+        "jsonwebtoken": "^8.1.0",
+        "node-sass-middleware": "^0.11.0",
+        "pug": "^2.0.0-rc.4",
+        "serve-favicon": "^2.4.5",
+        "tcp-ping": "^0.1.1",
+        "uuid": "^3.1.0",
+        "winston": "^2.4.0",
+        "winston-daily-rotate-file": "^1.7.2"
+    },
+    "devDependencies": {
+        "concurrently": "^3.5.1",
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-batch-replace": "0.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-livereload": "^3.8.1",
+        "gulp-load-plugins": "^1.5.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-uglify": "^3.0.0",
+        "gulp-util": "^3.0.8",
+        "supervisor": "^0.12.0"
+    }
+}

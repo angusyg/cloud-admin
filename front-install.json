@@ -1,0 +1,6 @@
+{
+    "APP_NAME": "Cloud Admin",
+    "INDEX_TITLE": "Cloud Admin - Application d'administration du cloud pour WEBRC",
+    "ANGULAR_BASE_ROUTE": "/cloud",
+    "ANGULAR_APP_MODULE": "cloud.admin.client"
+}

@@ -1,0 +1,34 @@
+div.full-height(layout='row' layout-xs='column' layout-wrap='' layout-align='center center')
+	div(flex-gt-md='25' flex-md='40' flex='50')
+		md-card
+			img.md-card-image(ng-src='images/cloud_logo2.png', alt='login image')
+			md-card-title
+				md-card-title-text
+					span.md-headline Cloud Admin
+			form(name='loginForm')
+				md-card-content                    
+					md-input-container.md-block
+						label Login
+						md-icon
+							i.material-icons account_circle
+						input(required='', name='login', ng-model='login.user.login')
+						div(ng-messages='loginForm.login.$error')
+							div(ng-message='required') Veuillez entrer un login
+					md-input-container.md-block
+						label Mot de passe
+						md-icon
+							i.material-icons lock
+						input(required='', type='password', name='password', ng-model='login.user.password' minlength='8')
+						div(ng-messages='loginForm.password.$error', role='alert')
+							div(ng-message='required') Veuillez entrer un mot de passe
+							div(ng-message='minlength') Veuillez entrer un mot de passe d'au moins 8 caractères
+					md-input-container.md-block
+						label Machine proxy
+						md-icon
+							i.material-icons router
+						input(required='', type='text', name='proxy', ng-model='login.user.proxy' ng-pattern="/^M\\d{5}$/")
+						div(ng-messages='loginForm.proxy.$error', role='alert')
+							div(ng-message='required') Veuillez entrer un numéro de machine
+							div(ng-message='pattern') Veuillez entrer un numéro de machine valide (MXXXXX)
+					md-card-actions(layout='row', layout-align='end')
+						md-button.md-raised.md-primary(flex-gt-md='33' flex-md='50' flex='100' type='submit' ng-disabled='loginForm.$invalid' ng-click='login.doLogin()') Connexion
