@@ -1,0 +1,12 @@
+div(ng-if='isVisible()' flex='' layout='row' layout-align='center')
+	.section(id='{{step.id}}' flex='50' layout='column' layout-align='start start')
+		h2(flex='1') EAR(S) à déployer ?
+		form(flex='1')
+			md-button.md-raised(ng-class='{"md-primary": config.ears.length > 0}' ng-click='getServerEarList()') Oui
+		div(flex='1' layout='row' layout-align='center')
+			md-button.md-fab.md-accent(ng-click='goToBeforeStep()')
+				md-icon
+					i.material-icons arrow_backward
+			md-button.md-fab.md-accent(ng-disabled='!isValidStep()' ng-click='goToNextStep()') 
+				md-icon
+					i.material-icons arrow_forward

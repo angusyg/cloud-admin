@@ -6,9 +6,9 @@ html
 		block head
 		link(rel='stylesheet', href='/stylesheets/angular-material.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-	body
+	body(layout='row' layout-align='center')
 		header
-		section#content(ui-view='content')
+		md-content.transparent(layout='column' layout-align=' center' flex='' ui-view='content')
 		footer
 		script(src='/js/jquery.min.js')
 		script(src='/js/angular.min.js')

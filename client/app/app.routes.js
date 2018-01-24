@@ -44,7 +44,6 @@
                             proxy.up = response;
                         })
                         .catch(function(error) {
-                            ToastService.error('Erreur lors du test du proxy');
                             throw error;
                         });
                     return proxy;
