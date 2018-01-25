@@ -1,12 +1,12 @@
-div(ng-if='isVisible()' flex='' layout='row' layout-align='center')
-	.section(id='{{step.id}}' flex='50' layout='column' layout-align='start start')
-		h2(flex='1') Serveur à déployer ?
-		form(flex='1')
-			md-button.md-raised(ng-repeat='server in servers' ng-class='{"md-primary": config.server === server}' ng-click='selectServer(server)') {{ server.name }}
-		div(flex='1' layout='row' layout-align='center')
-			md-button.md-fab.md-accent(ng-disabled='true')
-				md-icon
-					i.material-icons arrow_backward
-			md-button.md-fab.md-accent(ng-class='{"md-primary": config.server === server}' ng-disabled='config.server === null' ng-click='goToNextStep()') 
-				md-icon
-					i.material-icons arrow_forward
+div(ng-show='true' flex='' layout='row' layout-align='center')
+    .section(id='{{step.id}}' flex='50' layout='column' layout-align='start start')
+        h2(flex='1') Serveur à déployer ?
+        form(flex='1')
+            md-button.md-raised(ng-repeat='server in servers' ng-class='{"md-accent": config.server === server}' ng-click='selectServer(server)') {{ server.name }}
+        //- div(flex='1' layout='row' layout-align='center')
+        //-     md-button.md-fab.md-accent(ng-disabled='true')
+        //-         md-icon
+        //-             i.material-icons arrow_backward
+        //-     md-button.md-fab.md-accent(ng-class='{"md-primary": config.server === server}' ng-disabled='config.server === null' ng-click='goToNextStep()') 
+        //-         md-icon
+        //-             i.material-icons arrow_forward

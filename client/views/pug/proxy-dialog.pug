@@ -1,43 +1,43 @@
 md-dialog(aria-label='Mango (Fruit)')
-	md-toolbar
-		.md-toolbar-tools
-			h2 Proxy local pour rebond du cloud vers la PFD
-	md-dialog-content(style="max-width:750px;max-height:600px; ")
-		.md-dialog-content
-			p(align='justify')
-				| La VM du cloud Open Stack PROBTP n'ayant pas accès à la PFD (http://solar-repo.retraite.lan/), un proxy local a été mis en place. Ce proxy doit être téléchargé et démarré sur la machine choisie lors du login.
-			h3 Utilisation du proxy
-			ul
-				li
-					p 
-						| Télécharger le proxy en cliquant sur ce bouton : 
-					a(target="_self" href="{{ dialog.proxyZipUrl }}" download="proxy.zip")
-						md-button.md-raised.md-primary Téléchargement du serveur proxy
-				li 
-					p 
-						| Extraire le zip dans le dossier de votre choix                    
-				li 
-					p 
-						| Dans le dossier d'extraction, double cliquer sur 
-						b proxy.bat 
-						| afin de démarrer le proxy local.
-				li 
-					p 
-						| Pour tester le proxy un fois démarré, cliquer sur ce bouton :
-					md-button.md-raised(ng-class='{"md-warn": dialog.proxyUp === false, "md-primary": dialog.proxyUp === null, "md-accent": dialog.proxyUp === true}' ng-click='dialog.testProxy()') Test du proxy local 
-						span(ng-if='dialog.proxyUp === false') 
-							| : 
-							md-icon
-								i.material-icons mood_bad
-						span(ng-if='dialog.proxyUp === true') 
-							| : 
-							md-icon
-								i.material-icons mood
-				li 
-					p 
-						| Pour arrêter le proxy, faire 
-						b Ctrl + C 
-						| ou fermer la fenêtre ouverte lors du démarrage.
-	md-dialog-actions(layout='row')
-		span(flex='')
-		md-button.md-raised.md-primary(ng-click='dialog.close()') OK
+    md-toolbar.ca-dialog
+        .md-toolbar-tools
+            h2 Proxy local pour rebond du cloud vers la PFD
+    md-dialog-content(style="max-width:750px;max-height:600px; ")
+        .md-dialog-content
+            p(align='justify')
+                | La VM du cloud Open Stack PROBTP n'ayant pas accès à la PFD (http://solar-repo.retraite.lan/), un proxy local a été mis en place. Ce proxy doit être téléchargé et démarré sur la machine choisie lors du login.
+            h3 Utilisation du proxy
+            ul
+                li
+                    p 
+                        | Télécharger le proxy en cliquant sur ce bouton : 
+                    a(target="_self" href="{{ dialog.proxyZipUrl }}" download="proxy.zip")
+                        md-button.md-raised.md-primary Téléchargement du serveur proxy
+                li 
+                    p 
+                        | Extraire le zip dans le dossier de votre choix                    
+                li 
+                    p 
+                        | Dans le dossier d'extraction, double cliquer sur 
+                        b proxy.bat 
+                        | afin de démarrer le proxy local.
+                li 
+                    p 
+                        | Pour tester le proxy un fois démarré, cliquer sur ce bouton :
+                    md-button.md-raised(ng-class='{"md-warn": dialog.proxyUp === false, "md-primary": dialog.proxyUp === null, "md-accent": dialog.proxyUp === true}' ng-click='dialog.testProxy()') Test du proxy local 
+                        span(ng-if='dialog.proxyUp === false') 
+                            | : 
+                            md-icon
+                                i.material-icons mood_bad
+                        span(ng-if='dialog.proxyUp === true') 
+                            | : 
+                            md-icon
+                                i.material-icons mood
+                li 
+                    p 
+                        | Pour arrêter le proxy, faire 
+                        b Ctrl + C 
+                        | ou fermer la fenêtre ouverte lors du démarrage.
+    md-dialog-actions(layout='row')
+        span(flex='')
+        md-button.md-raised.md-primary(ng-click='dialog.close()') OK

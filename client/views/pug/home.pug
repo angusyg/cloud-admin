@@ -1,18 +1,18 @@
 md-toolbar.transparent(flex='1')
-	.md-toolbar-tools
-		div(flex='100' layout='row' layout-align='space-around')
-			md-button.md-raised(ng-class='{"md-warn": home.proxy.up === false, "md-primary": home.proxy.up === undefined, "md-accent": home.proxy.up === true}' ng-click='home.showProxyInfos($event)') Proxy ({{ home.proxy.host }}) 
-				span(ng-if='home.proxy.up === false') 
-					| : 
-					md-icon
-						i.material-icons mood_bad
-				span(ng-if='home.proxy.up === true') 
-					| : 
-					md-icon
-						i.material-icons mood
-			md-button.md-raised.md-primary(ng-click='home.doLogout()') Déconnexion
+    .md-toolbar-tools
+        div(flex='100' layout='row' layout-align='space-around')
+            md-button.md-raised(ng-class='{"md-warn": home.proxy.up === false, "md-primary": home.proxy.up === undefined, "md-accent": home.proxy.up === true}' ng-click='home.showProxyInfos($event)') Proxy ({{ home.proxy.host }}) 
+                span(ng-if='home.proxy.up === false') 
+                    | : 
+                    md-icon
+                        i.material-icons mood_bad
+                span(ng-if='home.proxy.up === true') 
+                    | : 
+                    md-icon
+                        i.material-icons mood
+            md-button.md-raised.md-primary(ng-click='home.doLogout()') Déconnexion
 md-content.transparent(flex='')
-	div(layout='column' ng-cloak='' layout-align='center none')
-		server-section(flow='home.currentFlow' step='home.steps.server' servers = 'home.servers' currentflowstep='home.currentFlowStep' config='home.config' gotonextstep='home.goToNextStep')
-		snapshot-section(flow='home.currentFlow' step='home.steps.snapshot' currentflowstep='home.currentFlowStep' config='home.config' gotobeforestep='home.goToBeforeStep' gotonextstep='home.goToNextStep')
-		artifactory-section(flow='home.currentFlow' step='home.steps.artifactory' currentflowstep='home.currentFlowStep' config='home.config' gotobeforestep='home.goToBeforeStep' gotonextstep='home.goToNextStep')
+    div(layout='column' ng-cloak='' layout-align='center none')
+        server-section(flow='home.currentFlow' step='home.steps.server' servers = 'home.servers' currentflowstep='home.currentFlowStep' config='home.config' gotonextstep='home.goToNextStep')
+        snapshot-section(flow='home.currentFlow' step='home.steps.snapshot' currentflowstep='home.currentFlowStep' config='home.config' gotobeforestep='home.goToBeforeStep' gotonextstep='home.goToNextStep')
+        artifactory-section(flow='home.currentFlow' step='home.steps.artifactory' currentflowstep='home.currentFlowStep' config='home.config' gotobeforestep='home.goToBeforeStep' gotonextstep='home.goToNextStep')

@@ -28,6 +28,7 @@
         function show(level, message) {
             $mdToast.show($mdToast.simple()
                 .textContent(message)
+                .position('top right')
                 .theme(level + '-toast'));
         }
     }

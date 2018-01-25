@@ -1,23 +1,23 @@
 (function(angular) {
-	'use strict';
+    'use strict';
 
-	angular.module('cloud.admin.client')
-		.factory('ArtifactoryService', ArtifactoryService);
+    angular.module('cloud.admin.client')
+        .factory('ArtifactoryService', ArtifactoryService);
 
-	ArtifactoryService.$inject = ['$http', '$q', 'API'];
+    ArtifactoryService.$inject = ['$http', '$q', 'API'];
 
-	function ArtifactoryService($http, $q, API) {
-		return {
-			getServerEarList: getServerEarList
-		};
+    function ArtifactoryService($http, $q, API) {
+        return {
+            getServerEarList: getServerEarList
+        };
 
-		function getServerEarList(server, snapshot) {
-			return $http.post(API.ENDPOINTS.SERVER_EARS.PATH + server, {
-					snapshot: snapshot
-				})
-				.then(function(response) {
-					return $q.resolve(response.data);
-				});
-		}
-	}
+        function getServerEarList(server, snapshot) {
+            return $http.post(API.ENDPOINTS.SERVER_EARS.PATH.replace(':id', server), {
+                    snapshot: snapshot
+                })
+                .then(function(response) {
+                    return $q.resolve(response.data);
+                });
+        }
+    }
 })(angular);

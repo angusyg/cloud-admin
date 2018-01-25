@@ -15,7 +15,7 @@
         $mdThemingProvider
             .theme('default')
             .primaryPalette('indigo')
-            .accentPalette('green')
+            .accentPalette('light-green')
             .warnPalette('red')
             .backgroundPalette('grey');
     }
